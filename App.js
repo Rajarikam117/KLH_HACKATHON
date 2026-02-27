@@ -5,7 +5,7 @@
 
 // ─── Configuration ────────────────────────────────────
 const API_BASE = 'http://127.0.0.1:5000';
-const USE_MOCK = false; // ← SET TO true TO USE MOCK DATA WITHOUT FLASK
+const USE_MOCK = true; // ← SET TO false WHEN FLASK BACKEND IS RUNNING
 let agentEnabled = false;
 let agentIntervalId = null;
 const AGENT_CYCLE_INTERVAL = 10000; // 10 seconds
