@@ -1,0 +1,166 @@
+/* ═══════════════════════════════════════════
+   Novo Folio — Sentiment Trading Dashboard
+   styles.css
+   ═══════════════════════════════════════════ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #0b0f19;
+    color: #e2e8f0;
+}
+
+/* ─── Custom Scrollbar ─────────────────────── */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111827;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #374151;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4b5563;
+}
+
+/* ─── Card Glow Hover ──────────────────────── */
+.card-glow {
+    transition: box-shadow 0.35s ease, transform 0.25s ease;
+}
+
+.card-glow:hover {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.08), 0 8px 30px rgba(0, 0, 0, 0.35);
+    transform: translateY(-2px);
+}
+
+/* ─── Pulse Dot Animation ──────────────────── */
+@keyframes pulse-dot {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: .5;
+        transform: scale(1.4);
+    }
+}
+
+.pulse-dot {
+    animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* ─── Shimmer Loading ──────────────────────── */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.shimmer {
+    background: linear-gradient(90deg, #1a2035 25%, #232b3e 50%, #1a2035 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 6px;
+}
+
+/* ─── Log Container ────────────────────────── */
+.log-container {
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+.log-container::-webkit-scrollbar {
+    width: 4px;
+}
+
+/* ─── Table Row Hover ──────────────────────── */
+.table-row-hover:hover {
+    background: rgba(59, 130, 246, 0.04);
+}
+
+/* ─── Fade In Animation ────────────────────── */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* ─── Toast Animations ─────────────────────── */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.toast-in {
+    animation: slideIn 0.35s ease-out forwards;
+}
+
+.toast-out {
+    animation: slideOut 0.35s ease-in forwards;
+}
+
+/* ─── Gradient Accent Line ─────────────────── */
+.accent-line {
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+    border-radius: 0 0 4px 4px;
+}
+
+/* ─── Hide TradingView Attribution ─────────── */
+.tradingview-widget-copyright,
+.tradingview-widget-container__widget+div,
+[id*="tradingview"]+div[style*="position"],
+.tv-embed-widget-wrapper__bottom,
+.tv-header__link,
+div[class*="copyright"] {
+    display: none !important;
+    height: 0 !important;
+    overflow: hidden !important;
+}
